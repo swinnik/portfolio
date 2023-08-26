@@ -1,5 +1,6 @@
 import React from "react";
 import instaImage from "../assets/images/icons8-instagram-50.png";
+import colorPalette from "../assets/data/colorPalette.js";
 
 const Header = () => {
   const handleNameClick = () => {
@@ -49,7 +50,7 @@ const styles = {
     // justifyContent: "space-between",
     alignItems: "center",
     height: "100px",
-    backgroundColor: "black",
+    backgroundColor: colorPalette.header,
     color: "#fff",
     fontSize: "24px",
     fontWeight: "lighter",
