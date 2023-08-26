@@ -20,17 +20,19 @@ const Work = () => {
   console.log(workCollection);
   return (
     <div style={styles.section}>
-      <div
-        style={{
-          ...styles.sectionTitle,
-          backgroundColor: isMobile ? colorPalette.work : "transparent",
-          boxShadow: isMobile ? "5px 5px 20px 0px rgba(0,0,0,0.75)" : "none",
-        }}
-      >
+      <div style={{ position: "sticky", top: 0, left: 0 }}>
+        <div style={{ height: "100px", backgroundColor: colorPalette.bio }} />
         <div
-          style={{ height: "100px", backgroundColor: colorPalette.bio }}
-        ></div>
-        Work
+          style={{
+            ...styles.sectionTitle,
+            backgroundColor: isMobile ? colorPalette.work : "transparent",
+            boxShadow: isMobile
+              ? "5px 5px 20px -10px rgba(0,0,0,0.75)"
+              : "none",
+          }}
+        >
+          Work
+        </div>
       </div>
       <div style={styles.entries}>
         {workCollection &&
@@ -67,7 +69,7 @@ const styles = {
   sectionTitle: {
     fontSize: "4em",
     fontWeight: "lighter",
-    position: "sticky",
+    // position: "sticky",
     top: 0,
     left: 0,
     paddingLeft: "1%",
