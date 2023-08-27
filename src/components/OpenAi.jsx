@@ -7,7 +7,9 @@ const OpenAIChatComponent = () => {
   const [inputText, setInputText] = useState("");
   const [responseText, setResponseText] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
   const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
+
 
   const handleButtonClick = () => {
     setIsLoading(true); // Set loading state
