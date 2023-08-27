@@ -84,11 +84,13 @@ const styles = {
     top: 100,
     backgroundColor: colorPalette.work,
     color: "black",
+    padding: "10px",
   },
   input: {
-    width: "100%",
+    width: "50%",
     padding: "10px",
     marginBottom: "10px",
+    marginRight: "10px",
   },
 };
 
