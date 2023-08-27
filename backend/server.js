@@ -10,7 +10,6 @@ app.use(express.static(path.join(__dirname, "../dist")));
 // app.get('/api/data', (req, res) => {
 //   // Handle API request
 // });
-//
 
 // Serve React app for all other routes
 app.get("*", (req, res) => {
