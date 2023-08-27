@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+const Dotenv = require("dotenv-webpack");
 
 module.exports = {
   entry: "./src/index.js",
@@ -13,6 +15,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new Dotenv(), // Initialize the dotenv-webpack plugin
   ],
 
   module: {
@@ -40,5 +43,10 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    fallback: {
+      process: require.resolve("process/browser"),
+    },
   },
 };
