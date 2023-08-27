@@ -35,7 +35,7 @@ const Work = () => {
         </div>
       </div>
       {/* <div style={styles.entries}>
-        {/* {workCollection &&
+        {workCollection &&
           workCollection.map((work) => (
             <div style={styles.entry} key={work.title}>
               <div
@@ -53,7 +53,7 @@ const Work = () => {
               <div style={styles.publication}>{work.publication}</div>
               <div style={styles.content}>{work.content}</div>
             </div>
-          ))} */}
+          ))}
       </div> */}
     </div>
   );
