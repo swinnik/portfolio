@@ -8,11 +8,10 @@ import OpenAi from "./OpenAi.jsx";
 const App = () => {
   return (
     <div style={styles.app}>
-      <Header />
-      <Bio />
+      {/* <Header /> */}
+      {/* <Bio /> */}
       <OpenAi />
-      <Work />
-      <h1>Hello, World!</h1>
+      {/* <Work /> */}
     </div>
   );
 };
@@ -24,6 +23,8 @@ const styles = {
     position: "absolute",
     top: 0,
     left: 0,
+    width: "100%",
     color: colorPalette.text1,
+    backgroundColor: "red",
   },
 };

@@ -9,7 +9,7 @@
     "start:frontend": "webpack-dev-server --mode development --open --hot",
     "watch:backend": "nodemon backend/server.js",
     "watch:frontend": "webpack serve --mode development --open --hot",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production --watch"
   },
   "author": "swinnik",
   "license": "ISC",
