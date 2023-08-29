@@ -29,6 +29,5 @@ const styles = {
     // flexDirection: "column",
     // alignItems: "center",
     // justifyContent: "center",
-    // padding: "5%",
   },
 };

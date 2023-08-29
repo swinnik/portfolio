@@ -81,15 +81,14 @@ const OpenAIChatComponent = () => {
 const styles = {
   section: {
     // top: 100,
-    width: "80%",
-    height: "100%",
+    // width: "80%",
     display: "flex",
     flexDirection: "column",
     justifyContent: "start",
     gap: "10px",
     backgroundColor: colorPalette.work,
     color: "black",
-    padding: "15%",
+    margin: "15%",
   },
   form: {
     display: "flex",
