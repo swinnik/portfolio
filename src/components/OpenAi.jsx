@@ -6,7 +6,7 @@ import problems from "../assets/data/problems.js";
 
 const OpenAIChatComponent = () => {
   const [inputText, setInputText] = useState("");
-  const [responseText, setResponseText] = useState([]);
+  const [responseText, setResponseText] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleButtonClick = async () => {
@@ -60,11 +60,18 @@ const OpenAIChatComponent = () => {
         );
       })}
       <div>
-        <h2>Response:</h2>
         {isLoading ? (
-          <div>Thinking of a solution...</div>
+          <>
+            <h2>Response:</h2>
+            <div>Thinking of a solution...</div>
+          </>
         ) : (
-          <div>{responseText}</div>
+          responseText && (
+            <>
+              <h2>Response:</h2>
+              <div>{responseText}</div>
+            </>
+          )
         )}
       </div>
     </div>
@@ -78,14 +85,15 @@ const styles = {
     height: "100%",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "start",
     gap: "10px",
     backgroundColor: colorPalette.work,
     color: "black",
-    // padding: "15%",
+    padding: "15%",
   },
   form: {
     display: "flex",
-    justifyContent: "space-between",
+    // justifyContent: "space-between",
     alignItems: "center",
     gap: "10px",
   },
@@ -93,14 +101,15 @@ const styles = {
     width: "60%",
     border: "1px solid black",
     borderRadius: "5px",
-    padding: "10px 10px",
+    padding: "8px 8px",
     minHeight: "40px",
   },
 
   button: {
-    height: "50px",
+    // height: "50px",
     border: "1px solid black",
     borderRadius: "5px",
+    padding: "12px 12px",
   },
 };
 
