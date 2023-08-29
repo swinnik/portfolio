@@ -3,12 +3,13 @@ const path = require("path");
 const axios = require("axios");
 const bodyParser = require("body-parser");
 const app = express();
+require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "../dist")));
 app.use(bodyParser.json());
 
 app.post("/api/generate-response", async (req, res) => {
-  const { inputText } = req.body;
+  const { inputText, resume } = req.body;
 
   try {
     const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
@@ -17,10 +18,10 @@ app.post("/api/generate-response", async (req, res) => {
       messages: [
         {
           role: "user",
-          content: `In reference to ..., come up with a business model... ${inputText}`,
+          content: `Come up with a business model, or a solution to the problem... ${inputText}`,
         },
       ],
-      temperature: 0.7,
+      temperature: 0.6,
     };
 
     const headers = {
