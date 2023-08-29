@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import colorPalette from "../assets/data/colorPalette.js";
+import resume from "../assets/data/resume.js";
 
 const OpenAIChatComponent = () => {
   const [inputText, setInputText] = useState("");
@@ -13,6 +14,7 @@ const OpenAIChatComponent = () => {
     try {
       const response = await axios.post("/api/generate-response", {
         inputText,
+        resume,
       });
 
       setResponseText(response.data.responseText);
