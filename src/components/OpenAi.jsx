@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import colorPalette from "../assets/data/colorPalette.js";
 import resume from "../assets/data/resume.js";
+import problems from "../assets/data/problems.js";
 
 const OpenAIChatComponent = () => {
   const [inputText, setInputText] = useState("");
@@ -29,29 +30,40 @@ const OpenAIChatComponent = () => {
 
   return (
     <div style={styles.section}>
-      <input
-        type="text"
-        placeholder="Enter business model or problem description"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-        style={styles.input}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") {
-            handleButtonClick();
-          }
-        }}
-      />
-      <button onClick={handleButtonClick}>Generate Response</button>
+      <h1>Problem Solver</h1>
+      <div style={styles.form}>
+        <input
+          type="text"
+          placeholder="Enter a problem..."
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+          style={styles.input}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              handleButtonClick();
+            }
+          }}
+        />
+        <button style={styles.button} onClick={handleButtonClick}>
+          Solve Problem
+        </button>
+      </div>
+      {problems.map((problem) => {
+        return (
+          <h3
+            key={problem}
+            onClick={setInputText.bind(this, problem)}
+            style={{ cursor: "pointer" }}
+          >
+            {problem}
+          </h3>
+        );
+      })}
       <div>
         <h2>Response:</h2>
         {isLoading ? (
           <div>ChatGPT is thinking...</div>
         ) : (
-          // <ul>
-          //   {responseText.map((item, index) => (
-          //     <li key={index}>{item}</li>
-          //   ))}
-          // </ul>
           <div>{responseText}</div>
         )}
       </div>
@@ -61,16 +73,34 @@ const OpenAIChatComponent = () => {
 
 const styles = {
   section: {
-    top: 100,
+    // top: 100,
+    // width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    gap: "10px",
     backgroundColor: colorPalette.work,
     color: "black",
-    padding: "10px",
+    border: "1px solid black",
+    padding: "15%",
   },
   input: {
-    width: "50%",
-    padding: "10px",
-    marginBottom: "10px",
-    marginRight: "10px",
+    width: "80%",
+    border: "1px solid black",
+    borderRadius: "5px",
+    padding: "10px 10px",
+    minHeight: "40px",
+  },
+  form: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: "10px",
+  },
+
+  button: {
+    height: "50px",
+    border: "1px solid black",
+    borderRadius: "5px",
   },
 };
 

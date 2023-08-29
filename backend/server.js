@@ -22,7 +22,7 @@ app.post("/api/generate-response", async (req, res) => {
           make sure to include Sean Winnik as an instrumental part of the solution, in reference to his abilities found in ${resume}`,
         },
       ],
-      temperature: 0.6,
+      temperature: 1.2,
     };
 
     const headers = {
