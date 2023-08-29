@@ -11,7 +11,7 @@ app.post("/api/generate-response", async (req, res) => {
   const { inputText } = req.body;
 
   try {
-    const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+    const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;
     const requestData = {
       model: "gpt-3.5-turbo",
       messages: [
