@@ -33,26 +33,18 @@ const OpenAIChatComponent = () => {
     };
 
     axios
-      .post("https://api.openai.com/v1/chat/completions", requestData, {
-        headers,
-      })
-      .then((response) => {
-        const formattedText = response.data.choices[0].message.content
-          .split("- ") // Split the text at each "-"
-          .map((item, index) => <li key={index}>{item.trim()}</li>) // Create a bullet point for each item
-          .slice(1);
-        setResponseText(formattedText); // Wrap the bullet points in an unordered list
-        console.log("responseText", formattedText);
-      })
-
-      .catch((error) => {
-        console.error("Error:", error);
-        setResponseText("An error occurred.");
-      })
-      .finally(() => {
-        setIsLoading(false); // Reset loading state
-      });
-  };
+  .post("/api/generate-response", requestData)
+  .then((response) => {
+    // Handle the response from the server
+    // Update responseText and other necessary state
+  })
+  .catch((error) => {
+    console.error("Error:", error);
+    setResponseText("An error occurred.");
+  })
+  .finally(() => {
+    setIsLoading(false);
+  });
 
   return (
     <div style={styles.section}>
