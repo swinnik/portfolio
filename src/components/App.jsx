@@ -20,11 +20,15 @@ export default App;
 
 const styles = {
   app: {
-    position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
+    width: "100vw",
+    minHeight: "100vh",
+    margin: "0px",
     color: colorPalette.text1,
+    backgroundColor: colorPalette.work,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "5%",
   },
 };
