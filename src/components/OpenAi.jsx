@@ -74,28 +74,27 @@ const OpenAIChatComponent = () => {
 const styles = {
   section: {
     // top: 100,
-    // width: "100%",
+    width: "80%",
     height: "100%",
     display: "flex",
     flexDirection: "column",
     gap: "10px",
     backgroundColor: colorPalette.work,
     color: "black",
-    border: "1px solid black",
-    padding: "15%",
+    // padding: "15%",
+  },
+  form: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    gap: "10px",
   },
   input: {
-    width: "80%",
+    width: "60%",
     border: "1px solid black",
     borderRadius: "5px",
     padding: "10px 10px",
     minHeight: "40px",
-  },
-  form: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: "10px",
   },
 
   button: {
