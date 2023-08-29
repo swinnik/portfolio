@@ -18,6 +18,7 @@ const OpenAIChatComponent = () => {
       });
 
       setResponseText(response.data.responseText);
+      console.log(response.data);
     } catch (error) {
       console.error("Error:", error);
       setResponseText(["An error occurred."]);
@@ -46,11 +47,12 @@ const OpenAIChatComponent = () => {
         {isLoading ? (
           <div>ChatGPT is thinking...</div>
         ) : (
-          <ul>
-            {responseText.map((item, index) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          // <ul>
+          //   {responseText.map((item, index) => (
+          //     <li key={index}>{item}</li>
+          //   ))}
+          // </ul>
+          <div>{responseText}</div>
         )}
       </div>
     </div>

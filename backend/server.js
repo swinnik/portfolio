@@ -18,7 +18,7 @@ app.post("/api/generate-response", async (req, res) => {
       messages: [
         {
           role: "user",
-          content: `Come up with a business model, or a solution to the problem... ${inputText}`,
+          content: `Come up with a short business model or solution to the provided problem, about 3 bullet points, each only 2 sentences long: ${inputText}`,
         },
       ],
       temperature: 0.6,
@@ -34,12 +34,9 @@ app.post("/api/generate-response", async (req, res) => {
       requestData,
       { headers }
     );
+    const formattedText = response.data.choices[0].message.content;
 
-    const formattedText = response.data.choices[0].message.content
-      .split("- ")
-      .map((item) => item.trim())
-      .slice(1);
-
+    console.log("formattedText", formattedText);
     res.json({ responseText: formattedText });
   } catch (error) {
     console.error("Error:", error);
