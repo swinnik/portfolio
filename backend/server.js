@@ -18,7 +18,8 @@ app.post("/api/generate-response", async (req, res) => {
       messages: [
         {
           role: "user",
-          content: `Come up with a short business model or solution to the provided problem, about 3 bullet points, each only 2 sentences long: ${inputText}`,
+          content: `Come up with a short business model or solution to the provided problem, about 3 bullet points, each only 2 sentences long: ${inputText}.
+          make sure to include Sean Winnik as an instrumental part of the solution, in reference to his abilities found in ${resume}`,
         },
       ],
       temperature: 0.6,

@@ -4,9 +4,11 @@
   "description": "github CI/CD run through",
   "main": "index.js",
   "scripts": {
-    "start": "npm run start:backend && npm run start:frontend",
-    "start:backend": "node backend/server.js",
+    "start": "npm run watch:backend && npm run watch:frontend",
+    "start:backend": "nodemon backend/server.js",
     "start:frontend": "webpack-dev-server --mode development --open --hot",
+    "watch:backend": "nodemon backend/server.js",
+    "watch:frontend": "webpack serve --mode development --open --hot",
     "build": "webpack --mode production"
   },
   "author": "swinnik",
@@ -17,6 +19,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.17.1",
     "morgan": "^1.10.0",
+    "nodemon": "^3.0.1",
     "normalize.css": "^8.0.1",
     "pg": "^8.11.3",
     "react": "^18.2.0",
