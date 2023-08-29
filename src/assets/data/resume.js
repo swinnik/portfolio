@@ -2,7 +2,7 @@ const resume = `Sean Winnik
 https://www.linkedin.com/in/seanwinnik/  |  https://github.com/swinnik | winnik.sean@gmail.com |  (818)  429-3683
 TECHNICAL SKILLS
 Front-End | JavaScript ES6+, TypeScript, React, HTML5, CSS, SASS, Bootstrap, Tailwind
-Back-End |Next.js, Node.js, Express, MongoDB, MySQL, PostreSQL, Prisma, Redis
+Back-End |Next.js, Node.js, Express, MongoDB, MySQL, PostreSQL, Prisma, Redis, Neuroscience Research, Patch Clamping, Data Analysis, Data Visualization, Python, R, MATLAB, Statistics, Machine Learning, Data Structures, Algorithms, Git, GitHub,
 Testing/Deployment | Jest, Mocha, Chai, AWS: EC2 / RDS, loader.io, Lighthouse, NGINX
 Developer Tools | Expo,  VS Code, Git, npm, Webpack, Babel, Agile Methodology, Scrum, TDD
 FREELANCE DEVELOPMENT EXPERIENCE
@@ -40,6 +40,7 @@ Increased project throughput by implementing workflow improvements, removing blo
 Developed a custom ticket/project-tracking software system to enhance communication and project management efficiency, improving kitchen output by 200% and reducing returned deliverables by 50%
 Lead Researcher | Gloster Aaron Lab 	2014-2015
 Designed an experimental protocol using cortical slice patch-clamping to study epilepsy.
+Generated and analyzed data, and presented findings at the Society for Neuroscience Conference.
 EDUCATION
 Hack Reactor | Advanced Software Engineering Immersive Program	 2023
 Wesleyan University | Master’s in Neuroscience &  Behavior	2015
