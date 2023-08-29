@@ -62,7 +62,7 @@ const OpenAIChatComponent = () => {
       <div>
         <h2>Response:</h2>
         {isLoading ? (
-          <div>ChatGPT is thinking...</div>
+          <div>Thinking of a solution...</div>
         ) : (
           <div>{responseText}</div>
         )}
