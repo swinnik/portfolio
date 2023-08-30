@@ -27,7 +27,7 @@ const styles = {
     margin: "0px",
     color: colorPalette.text1,
     backgroundColor: colorPalette.work,
-    display: "flex",
+    // display: "flex",
     // flexDirection: "column",
     // alignItems: "center",
     // justifyContent: "center",

@@ -53,7 +53,7 @@ const OpenAIChatComponent = () => {
           <h3
             key={problem}
             onClick={setInputText.bind(this, problem)}
-            style={{ cursor: "pointer" }}
+            style={styles.option}
           >
             {problem}
           </h3>
@@ -74,6 +74,7 @@ const OpenAIChatComponent = () => {
           )
         )}
       </div>
+      <div style={{ height: "100px" }} />
     </div>
   );
 };
@@ -109,6 +110,10 @@ const styles = {
     border: "1px solid black",
     borderRadius: "5px",
     padding: "12px 12px",
+  },
+  option: {
+    cursor: "pointer",
+    fontSize: "1.2em",
   },
 };
 

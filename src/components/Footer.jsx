@@ -15,11 +15,13 @@ const Footer = () => {
   return (
     <div style={styles.footer}>
       <div style={styles.text} onClick={handleNameClick}>
-        Created by Sean Winnik{" "}
+        <div>Created by:</div>
+        <div>Sean Winnik</div>
       </div>
       <div style={styles.text} onClick={handleOenAPIClick}>
         {" "}
-        Made with the OpenAI API Completion endpoint
+        <div>Made with:</div>
+        <div>OpenAI API /completion</div>
       </div>
     </div>
   );
@@ -49,5 +51,10 @@ const styles = {
   text: {
     cursor: "pointer",
     color: "blue",
+    fontSize: "1em",
+    flexDirection: "column",
+    display: "flex",
+    alignItems: "center",
+    // border: "1px solid blue",
   },
 };
