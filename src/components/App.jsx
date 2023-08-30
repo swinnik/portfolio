@@ -4,6 +4,7 @@ import Header from "./Header.jsx";
 import Bio from "./Bio.jsx";
 import Work from "./Work.jsx";
 import OpenAi from "./OpenAi.jsx";
+import Footer from "./Footer.jsx";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       {/* <Bio /> */}
       <OpenAi />
       {/* <Work /> */}
+      <Footer />
     </div>
   );
 };
@@ -25,7 +27,7 @@ const styles = {
     margin: "0px",
     color: colorPalette.text1,
     backgroundColor: colorPalette.work,
-    // display: "flex",
+    display: "flex",
     // flexDirection: "column",
     // alignItems: "center",
     // justifyContent: "center",
