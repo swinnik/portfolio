@@ -51,7 +51,7 @@ const styles = {
   text: {
     cursor: "pointer",
     color: "blue",
-    fontSize: "1em",
+    fontSize: ".8em",
     flexDirection: "column",
     display: "flex",
     alignItems: "center",
