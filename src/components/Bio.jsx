@@ -3,7 +3,7 @@ import colorPalette from "../assets/data/colorPalette.js";
 
 const Bio = () => {
   return (
-    <div style={styles.bio}>
+    <div style={styles.section}>
       <div>
         <div
           style={{
@@ -41,7 +41,7 @@ const styles = {
     fontFamily: "sans-serif",
   },
 
-  bio: {
+  section: {
     marginTop: "100px",
     display: "flex",
     flexWrap: "wrap",
