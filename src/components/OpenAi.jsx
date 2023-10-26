@@ -9,6 +9,11 @@ const OpenAIChatComponent = () => {
   const [responseText, setResponseText] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
+  const makeBold = (text, word) => {
+    const regex = new RegExp(`\\b${word}\\b`, "gi");
+    return text.replace(regex, `<b>${word}</b>`);
+  };
+
   const handleButtonClick = async () => {
     setIsLoading(true); // Set loading state
 
@@ -18,8 +23,11 @@ const OpenAIChatComponent = () => {
         resume,
       });
 
-      setResponseText(response.data.responseText);
-      console.log(response.data);
+      const processedResponse = makeBold(
+        response.data.responseText,
+        "Sean Winnik"
+      );
+      setResponseText(processedResponse);
     } catch (error) {
       console.error("Error:", error);
       setResponseText(["An error occurred."]);
@@ -69,7 +77,7 @@ const OpenAIChatComponent = () => {
           responseText && (
             <>
               <h2>Response:</h2>
-              <div>{responseText}</div>
+              <div dangerouslySetInnerHTML={{ __html: responseText }}></div>
             </>
           )
         )}
