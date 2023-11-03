@@ -91,13 +91,14 @@ const styles = {
   section: {
     // top: 100,
     width: "80%",
+    marginLeft: "10%",
+    marginRight: "10%",
     display: "flex",
     flexDirection: "column",
-    justifyContent: "start",
+    justifyContent: "center",
     gap: "10px",
     backgroundColor: colorPalette.work,
     color: "black",
-    margin: "15%",
   },
   form: {
     display: "flex",
@@ -106,18 +107,20 @@ const styles = {
     gap: "10px",
   },
   input: {
-    width: "60%",
+    width: "100%",
+    maxWidth: "500px",
     border: "1px solid black",
     borderRadius: "5px",
-    padding: "8px 8px",
-    minHeight: "40px",
+    padding: "15px 15px",
+    // height: "55px",
   },
 
   button: {
     // height: "50px",
     border: "1px solid black",
     borderRadius: "5px",
-    padding: "12px 12px",
+    minWidth: "140px",
+    padding: "15px 15px",
   },
   option: {
     cursor: "pointer",
