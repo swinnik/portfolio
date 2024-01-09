@@ -42,12 +42,12 @@ const OpenAIChatComponent = () => {
       <h1
         style={{
           textShadow:
-            "red -2px -2px 0px, yellow -5px -5px 0px, green -9px -9px, blue -14px -14px",
+            "red -2px -2px 2px, yellow -5px -5px 5px, green -9px -9px 9px, blue -14px -14px 14px",
           color: "white",
           backgroundColor: "black",
           width: "fit-content",
           borderRadius: "1em",
-          padding: ".9em .6em .6em 1.1em",
+          padding: ".7em .6em .6em 1em",
           boxShadow: "0px 0px 8px purple",
         }}
       >
@@ -113,7 +113,7 @@ const OpenAIChatComponent = () => {
               onClick={setInputText.bind(this, problem)}
               style={styles.option}
             >
-              {problem}
+              "*"{problem}
             </h3>
           );
         })}
