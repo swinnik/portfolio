@@ -39,7 +39,20 @@ const OpenAIChatComponent = () => {
 
   return (
     <div style={styles.section}>
-      <h1>Problem Solver</h1>
+      <h1
+        style={{
+          textShadow:
+            "red -2px -2px 0px, yellow -5px -5px 0px, green -9px -9px, blue -14px -14px",
+          color: "white",
+          backgroundColor: "black",
+          width: "fit-content",
+          borderRadius: "1em",
+          padding: ".9em .6em .6em 1.1em",
+          boxShadow: "0px 0px 8px purple",
+        }}
+      >
+        Problem Solver
+      </h1>
       <div style={styles.form}>
         <input
           type="text"
@@ -57,17 +70,7 @@ const OpenAIChatComponent = () => {
           Solve Problem
         </button>
       </div>
-      {problems.map((problem) => {
-        return (
-          <h3
-            key={problem}
-            onClick={setInputText.bind(this, problem)}
-            style={styles.option}
-          >
-            {problem}
-          </h3>
-        );
-      })}
+
       <div>
         {isLoading ? (
           <>
@@ -102,6 +105,20 @@ const OpenAIChatComponent = () => {
           )
         )}
       </div>
+      <div style={styles.options}>
+        {problems.map((problem) => {
+          return (
+            <h3
+              key={problem}
+              onClick={setInputText.bind(this, problem)}
+              style={styles.option}
+            >
+              {problem}
+            </h3>
+          );
+        })}
+      </div>
+
       <div style={{ height: "100px" }} />
     </div>
   );
@@ -120,19 +137,16 @@ const styles = {
     backgroundColor: colorPalette.work,
     color: "black",
   },
-  form: {
-    display: "flex",
-    // justifyContent: "space-between",
-    alignItems: "center",
-    gap: "10px",
-  },
+  form: {},
   input: {
-    width: "100%",
+    width: "60%",
     maxWidth: "500px",
     border: "1px solid black",
     borderRadius: "5px",
     padding: "15px 15px",
     // height: "55px",
+    margin: "5%",
+    boxShadow: "0px 0px 8px #d85bd8",
   },
 
   button: {
@@ -141,10 +155,22 @@ const styles = {
     borderRadius: "5px",
     minWidth: "140px",
     padding: "15px 15px",
+    width: "fit-content",
+    cursor: "pointer",
+    boxShadow: "0px 0px 8px #d85bd8",
+  },
+  options: {
+    backgroundColor: "white",
+    padding: "1em",
+    borderRadius: "1em",
+    boxShadow: "0px 0px 8px purple",
+    width: "fit-content",
+    margin: "auto",
   },
   option: {
     cursor: "pointer",
     fontSize: "1.2em",
+    margin: "1.5em 0",
   },
 };
 
