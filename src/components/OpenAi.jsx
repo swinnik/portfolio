@@ -67,7 +67,7 @@ const OpenAIChatComponent = () => {
           }}
         />
         <button style={styles.button} onClick={handleButtonClick}>
-          Solve Problem
+          Solve
         </button>
       </div>
 
@@ -128,6 +128,7 @@ const styles = {
   section: {
     // top: 100,
     width: "80%",
+    maxWidth: "1000px",
     marginLeft: "10%",
     marginRight: "10%",
     display: "flex",
@@ -137,15 +138,32 @@ const styles = {
     backgroundColor: colorPalette.work,
     color: "black",
   },
-  form: {},
+  form: {
+    display: "flex",
+    justifyContent: "space-between",
+    // alignItems: "center",
+    flexWrap: "wrap",
+    marginBottom: "1em",
+    // maxWidth: "700px",
+  },
+  options: {
+    backgroundColor: "white",
+    // maxWidth: "700px",
+    padding: "1em",
+    borderRadius: "1em",
+    boxShadow: "0px 0px 8px purple",
+    // margin: "auto",
+  },
   input: {
     width: "60%",
     maxWidth: "500px",
+    minWidth: "250px",
     border: "1px solid black",
     borderRadius: "5px",
     padding: "15px 15px",
     // height: "55px",
-    margin: "5%",
+    marginRight: "5%",
+    marginBottom: "1em",
     boxShadow: "0px 0px 8px #d85bd8",
   },
 
@@ -156,16 +174,9 @@ const styles = {
     minWidth: "140px",
     padding: "15px 15px",
     width: "fit-content",
+    height: "fit-content",
     cursor: "pointer",
     boxShadow: "0px 0px 8px #d85bd8",
-  },
-  options: {
-    backgroundColor: "white",
-    padding: "1em",
-    borderRadius: "1em",
-    boxShadow: "0px 0px 8px purple",
-    width: "fit-content",
-    margin: "auto",
   },
   option: {
     cursor: "pointer",
