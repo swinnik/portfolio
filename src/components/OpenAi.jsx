@@ -113,7 +113,7 @@ const OpenAIChatComponent = () => {
               onClick={setInputText.bind(this, problem)}
               style={styles.option}
             >
-              "*"{problem}
+              • {problem}
             </h3>
           );
         })}
