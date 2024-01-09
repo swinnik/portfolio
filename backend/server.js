@@ -1,8 +1,8 @@
 const express = require("express");
+const app = express();
 const path = require("path");
 const axios = require("axios");
 const bodyParser = require("body-parser");
-const app = express();
 require("dotenv").config();
 
 app.use(express.static(path.join(__dirname, "../dist")));
@@ -18,7 +18,7 @@ app.post("/api/generate-response", async (req, res) => {
       messages: [
         {
           role: "user",
-          content: `Come up with a short business model or solution to the provided problem, about 3 bullet points, each only 2 sentences long: ${inputText}.
+          content: `Come up with a short business model or solution to the provided problem, about 3 bullet points, each bullet point must begin with "*", each only 2 sentences long: ${inputText}.
           make sure to include Sean Winnik as an instrumental part of the solution, in reference to his abilities found in ${resume}`,
         },
       ],
