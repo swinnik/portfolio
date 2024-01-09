@@ -23,10 +23,11 @@ const OpenAIChatComponent = () => {
         resume,
       });
 
-      const processedResponse = makeBold(
-        response.data.responseText,
-        "Sean Winnik"
-      );
+      let processedResponse = makeBold(response.data.responseText, "Sean");
+      processedResponse = makeBold(processedResponse, "Winnik");
+      processedResponse = processedResponse.split("*");
+      processedResponse.shift();
+
       setResponseText(processedResponse);
     } catch (error) {
       console.error("Error:", error);
@@ -77,7 +78,7 @@ const OpenAIChatComponent = () => {
           responseText && (
             <>
               <h2>Response:</h2>
-              {responseText.split("*").map((paragraph, i) => {
+              {responseText.map((paragraph, i) => {
                 return (
                   <div
                     key={i}
@@ -91,7 +92,7 @@ const OpenAIChatComponent = () => {
                       boxShadow: "0px 0px 8px purple",
                     }}
                   >
-                    <div>{paragraph}</div>
+                    <div dangerouslySetInnerHTML={{ __html: paragraph }}></div>
                   </div>
                 );
               })}
