@@ -15,7 +15,7 @@ const OpenAIChatComponent = () => {
   };
 
   const handleButtonClick = async () => {
-    setIsLoading(true); // Set loading state
+    setIsLoading(true);
 
     try {
       const response = await axios.post("/api/generate-response", {
@@ -23,10 +23,11 @@ const OpenAIChatComponent = () => {
         resume,
       });
 
-      const processedResponse = makeBold(
-        response.data.responseText,
-        "Sean Winnik"
-      );
+      let processedResponse = makeBold(response.data.responseText, "Sean");
+      processedResponse = makeBold(processedResponse, "Winnik");
+      processedResponse = processedResponse.split("*");
+      processedResponse.shift();
+
       setResponseText(processedResponse);
     } catch (error) {
       console.error("Error:", error);
@@ -77,7 +78,26 @@ const OpenAIChatComponent = () => {
           responseText && (
             <>
               <h2>Response:</h2>
-              <div dangerouslySetInnerHTML={{ __html: responseText }}></div>
+              {responseText.map((paragraph, i) => {
+                return (
+                  <div
+                    key={i}
+                    style={{
+                      marginBottom: "20px",
+                      fontSize: "1em",
+                      lineHeight: "1.5em",
+                      backgroundColor: "white",
+                      padding: "1em",
+                      borderRadius: "1em",
+                      boxShadow: "0px 0px 8px purple",
+                    }}
+                  >
+                    <div dangerouslySetInnerHTML={{ __html: paragraph }}></div>
+                  </div>
+                );
+              })}
+
+              {/* <div dangerouslySetInnerHTML={{ __html: responseText }}></div> */}
             </>
           )
         )}
